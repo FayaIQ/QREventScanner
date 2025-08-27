@@ -76,7 +76,7 @@ const QRAttendanceSystem = () => {
       .eq('email', userCode)
       .order('ended_at', { ascending: false })
       .limit(1)
-      .single();
+      .maybeSingle();
 
     if (error || !data) return null;
 
